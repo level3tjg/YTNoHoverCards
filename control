@@ -3,7 +3,7 @@ Name: YTNoHoverCards
 Version: 0.0.1
 Architecture: iphoneos-arm
 Description: Disable overlay at the end of YouTube videos
-Depiction: https://level3tjg.xyz/repo/depictions/?=com.level3tjg.ytnohovercards
+Depiction: https://level3tjg.xyz/repo/depictions/?p=com.level3tjg.ytnohovercards
 Maintainer: level3tjg
 Author: level3tjg
 Section: Tweaks
