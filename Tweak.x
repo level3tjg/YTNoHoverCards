@@ -15,9 +15,8 @@
 @end
 
 %hook YTSettingsViewController
-- (void)setSectionItems:(NSArray <YTSettingsSectionItem *>*)sectionItems forCategory:(NSInteger)category title:(NSString *)title titleDescription:(NSString *)titleDescription headerHidden:(BOOL)headerHidden {
+- (void)setSectionItems:(NSMutableArray <YTSettingsSectionItem *>*)sectionItems forCategory:(NSInteger)category title:(NSString *)title titleDescription:(NSString *)titleDescription headerHidden:(BOOL)headerHidden {
 	if (category == 1) {
-		NSMutableArray *mutableSectionItems = [sectionItems mutableCopy];
 		YTSettingsSectionItem *hoverCardItem = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hover Cards" titleDescription:nil];
 		hoverCardItem.hasSwitch = YES;
 		hoverCardItem.switchVisible = YES;
@@ -26,8 +25,7 @@
 			[[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hover_cards_enabled"];
 			return YES;
 		};
-		[mutableSectionItems insertObject:hoverCardItem atIndex:3];
-		sectionItems = [mutableSectionItems copy];
+		[sectionItems insertObject:hoverCardItem atIndex:3];
 	}
 	%orig;
 }
